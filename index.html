@@ -38,9 +38,9 @@
 	
 	<script type="module">
 
-		import * as THREE from "../libs/three.js/build/three.module.js";
-		import {PLYLoader} from "../libs/three.js/loaders/PLYLoader.js";
-		import {OBJLoader} from "../libs/three.js/loaders/OBJLoader.js";
+		import * as THREE from "./libs/three.js/build/three.module.js";
+		import {PLYLoader} from "./libs/three.js/loaders/PLYLoader.js";
+		import {OBJLoader} from "./libs/three.js/loaders/OBJLoader.js";
 	
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
 		
@@ -59,7 +59,7 @@
 		});
 		
 		// Sigeom
-		Potree.loadPointCloud("../pointclouds/vol_total/cloud.js", "sigeom.sa", function(e){
+		Potree.loadPointCloud("./pointclouds/vol_total/cloud.js", "sigeom.sa", function(e){
 			let scene = viewer.scene;
 			scene.addPointCloud(e.pointcloud);
 			
