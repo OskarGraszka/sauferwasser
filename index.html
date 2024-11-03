@@ -74,6 +74,14 @@
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 			material.shape = Potree.PointShape.SQUARE;
 			viewer.fitToScreen();
+            
+            viewer.scene.annotations.add(new Potree.Annotation({
+				position: [318525.101, 318669.305, 578.8],
+				//cameraPosition: [633929.708,	490284.576,	6.623],
+				//cameraTarget: [633924.675,	490289.841,	4.600],
+				title: "PLY",
+				//description: `<p style="text-align:center;"><b>VW T2`
+			}));
 		});
 		
 	</script>
