@@ -104,12 +104,21 @@
             
             let mesh1;
 			{
-				let material = new THREE.MeshNormalMaterial();
+				//let material = new THREE.MeshNormalMaterial();
+                
+                let material = new THREE.MeshPhysicalMaterial( {
+					color: 0xaa4c18,
+					metalness: 0.5,
+					roughness: 0.8,
+					//clearCoat:  0.15,
+					//clearCoatRoughness: 0.37,
+					reflectivity: 0.32
+				} );
 				
 				mesh1 = new THREE.Mesh( geometry, material );
-				mesh1.position.set(318525.101, 318669.305, 578.8);
+				mesh1.position.set(318538.101, 318286.305, 534.8);
                 //mesh1.position.set(633923.101, 490290.305, 3.8);
-				mesh1.scale.multiplyScalar(1);
+				mesh1.scale.multiplyScalar(3);
 				mesh1.rotation.set(Math.PI / 2, Math.PI, 0)
 				viewer.scene.scene.add(mesh1);
 			}
