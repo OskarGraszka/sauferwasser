@@ -215,6 +215,10 @@
 			{
 				//let material = new THREE.MeshNormalMaterial();
                 let material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+                material.blending = THREE.CustomBlending; 
+                material.blendEquation = THREE.AddEquation; //default 
+                material.blendSrc = THREE.SrcAlphaFactor;  //default 
+                material.blendDst = THREE.OneMinusSrcAlphaFactor; //default
 				
 				mesh1 = new THREE.Mesh( geometry, material );
 				mesh1.position.set(633923.101, 490290.305, 3.8);
