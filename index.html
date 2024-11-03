@@ -97,6 +97,10 @@
                 let maxWGS84 = proj4(pointcloudProjection, mapProjection, bb.max.toArray());
             }*/
 		});
+        
+        var loader = new THREE.PLYLoader();
+		loader.load( "models/test.ply", (geometry) => {
+			geometry.computeVertexNormals();
 		
 	</script>
 	
