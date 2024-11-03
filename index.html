@@ -213,7 +213,8 @@
 			
 			let mesh1;
 			{
-				let material = new THREE.MeshNormalMaterial();
+				//let material = new THREE.MeshNormalMaterial();
+                let material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
 				
 				mesh1 = new THREE.Mesh( geometry, material );
 				mesh1.position.set(633923.101, 490290.305, 3.8);
