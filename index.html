@@ -120,14 +120,14 @@
 			{
 				//let material = new THREE.MeshNormalMaterial();
                 
-                let b_material = new THREE.MeshPhysicalMaterial( {
+                let b_material = new THREE.MeshDepthMaterial( {
 					color: 0xFFFFFF,
 					metalness: 0.5,
 					roughness: 0.8,
 					//clearCoat:  0.15,
 					//clearCoatRoughness: 0.37,
 					reflectivity: 0.32,
-                    fog: true
+                    //fog: true
 				} );
 				
 				mesh1 = new THREE.Mesh( geometry, b_material );
