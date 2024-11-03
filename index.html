@@ -214,20 +214,17 @@
 			let mesh1;
 			{
 				//let material = new THREE.MeshNormalMaterial();
-                let material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-                material.blending = THREE.CustomBlending; 
-                material.blendEquation = THREE.AddEquation; //default 
-                material.blendSrc = THREE.SrcAlphaFactor;  //default 
-                material.blendDst = THREE.OneMinusSrcAlphaFactor; //default
+                //let material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+                let material = new THREE.MeshBasicMaterial( {color: 534636} );
 				
-				mesh1 = new THREE.Mesh( geometry, material );
+				mesh1 = new THREE.Mesh( geometry, material);
 				mesh1.position.set(633923.101, 490290.305, 3.8);
 				mesh1.scale.multiplyScalar(1);
 				mesh1.rotation.set(Math.PI / 2, Math.PI, 0)
 				viewer.scene.scene.add(mesh1);
 			}
 			
-			let mesh2;
+			/*let mesh2;
 			{
 				let material = new THREE.MeshPhysicalMaterial( {
 					color: 0xaa4c18,
@@ -242,8 +239,8 @@
 				mesh2.scale.multiplyScalar(1);
 				mesh2.rotation.set(Math.PI / 2, Math.PI, 0)
 				viewer.scene.scene.add(mesh2);
-			}
-
+			}*/
+            /*
 			viewer.onGUILoaded(() => {
 				// Add entries to object list in sidebar
 				let tree = $(`#jstree_scene`);
@@ -264,7 +261,7 @@
 					}, 
 					"last", false, false);
 				tree.jstree(mesh2.visible ? "check_node" : "uncheck_node", bunny2ID);
-			});
+			});*/
 			
 	});
 	
