@@ -82,6 +82,19 @@
 				title: "PLY",
 				//description: `<p style="text-align:center;"><b>VW T2`
 			}));
+            
+            Potree.measureTimings = true;
+            let pointcloudProjection = e.pointcloud.projection;
+            let mapProjection = proj4.defs("WGS84");
+            
+            window.toMap = proj4(pointcloudProjection, mapProjection);
+            window.toScene = proj4(mapProjection, pointcloudProjection);
+            
+            {
+                let bb = viewer.getBoundingBox();
+                let minWGS84 = proj4(pointcloudProjection, mapProjection, bb.min.toArray());
+                let maxWGS84 = proj4(pointcloudProjection, mapProjection, bb.max.toArray());
+            }
 		});
 		
 	</script>
