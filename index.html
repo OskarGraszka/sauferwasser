@@ -102,6 +102,16 @@
 		loader.load( "models/test.ply", (geometry) => {
 			geometry.computeVertexNormals();
             
+            let mesh1;
+			{
+				let material = new THREE.MeshNormalMaterial();
+				
+				mesh1 = new THREE.Mesh( geometry, material );
+				mesh1.position.set(633923.101, 490290.305, 3.8);
+				mesh1.scale.multiplyScalar(0.0015);
+				mesh1.rotation.set(Math.PI / 2, Math.PI, 0)
+				viewer.scene.scene.add(mesh1);
+			}
         });
 			
 
