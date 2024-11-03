@@ -42,6 +42,11 @@
 	</div>
 	
 	<script>
+        
+        // to dodałem:
+        import * as THREE from "../libs/three.js/build/three.module.js";
+		import {PLYLoader} from "../libs/three.js/loaders/PLYLoader.js";
+		import {OBJLoader} from "../libs/three.js/loaders/OBJLoader.js";
 	
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
 		
@@ -75,7 +80,38 @@
 			material.shape = Potree.PointShape.SQUARE;
 			viewer.fitToScreen();
 		});
-		
+        
+        { // LIGHTS
+			const directional = new THREE.DirectionalLight( 0xffffff, 1.0);
+			directional.position.set( 10, 10, 10 );
+			directional.lookAt(0, 0, 0);
+
+			const ambient = new THREE.AmbientLight(0x555555);
+
+			viewer.scene.scene.add(directional);
+			viewer.scene.scene.add(ambient);
+		}
+        
+		var loader = new THREE.PLYLoader();
+        
+		loader.load( "models/test.ply", (geometry) => {
+			geometry.computeVertexNormals();
+			
+			// place two instances of this bunny into the scene
+			
+			let mesh1;
+			{
+				let material = new THREE.MeshNormalMaterial();
+				
+				let material = new THREE.MeshNormalMaterial();
+				mesh1 = new THREE.Mesh( geometry, material );
+				mesh1.position.set(318639.587, 318487.213, 572.634);
+				mesh1.scale.multiplyScalar(3);
+				mesh1.rotation.set(Math.PI / 2, Math.PI, 0)
+				viewer.scene.scene.add(mesh1);
+			}
+        });
+        
 	</script>
 	
 	
