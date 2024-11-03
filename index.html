@@ -172,7 +172,7 @@
 
 			let onError = function ( xhr ) {};
 			let loader = new THREE.OBJLoader( manager );
-			loader.load(`models/bus_obj/Bus.obj`, function ( object ) {
+			loader.load(`models/test.obj`, function ( object ) {
 				object.traverse( function ( child ) {
 					if ( child instanceof THREE.Mesh ) {
 						child.material.map = texture;
@@ -206,7 +206,7 @@
 		
 	// Load from ply
 	var loader = new THREE.PLYLoader();
-		loader.load( "models/bus_ply/bus_ply.ply", (geometry) => {
+		loader.load( "models/test.ply", (geometry) => {
 			geometry.computeVertexNormals();
 			
 			// place two instances of this bunny into the scene
