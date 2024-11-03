@@ -85,7 +85,7 @@
 			}));
             
             //Potree.measureTimings = true;
-            let pointcloudProjection = e.pointcloud.projection;
+            let pointcloudProjection = proj4.defs("EPSG:2180");//e.pointcloud.projection;
             let mapProjection = proj4.defs("WGS84");
             
             window.toMap = proj4(pointcloudProjection, mapProjection);
