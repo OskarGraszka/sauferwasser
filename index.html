@@ -188,9 +188,10 @@
             m.mesh.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
             viewer.scene.scene.add(m.mesh);
             
-            edges = new THREE.EdgesGeometry(m.mesh); 
-            line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) ); 
-            viewer.scene.scene.add( line );
+            m.edges = new THREE.EdgesGeometry(m.mesh); 
+            m.line = new THREE.LineSegments(m.edges, new THREE.LineBasicMaterial(
+                { color: 0x000000 } ) ); 
+            viewer.scene.scene.add( m.line );
         }
         
         
