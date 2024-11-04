@@ -74,10 +74,12 @@
 			material.size = 1;
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 			material.shape = Potree.PointShape.SQUARE;
-			viewer.fitToScreen();
+            scene.view.position.set(318338.101, 318086.305, 734.8);
+			scene.view.lookAt(new THREE.Vector3(318538.101, 318286.305, 534.8));
+			//viewer.fitToScreen();
             
             viewer.scene.annotations.add(new Potree.Annotation({
-				position: [318538.101, 318286.305, 544.8],
+				position: [318414.101, 318103.305, 544.8],
 				//cameraPosition: [633929.708,	490284.576,	6.623],
 				//cameraTarget: [633924.675,	490289.841,	4.600],
 				title: "PLY",
@@ -122,8 +124,8 @@
         
         var loader = new THREE.PLYLoader();
         
-        for m in mesh_dict:
-            //m = mesh_dict[0]
+        for (var i = 0; i < mesh_dict.length; i++):
+            m = mesh_dict[i]
             loader.load( "models/" + m.source, (geometry) => {
                 geometry.computeVertexNormals();
             
