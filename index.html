@@ -45,7 +45,7 @@
 	<script>
 	
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
-		
+		viewer.toggleSidebar();
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
 		viewer.setPointBudget(3_000_000);
@@ -55,9 +55,9 @@
 		viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
 		viewer.setDescription('SAUFERWASSER');
 		viewer.loadSettingsFromURL();
-        viewer.scene.view.position.set(318338.101, 318086.305, 734.8);
+        viewer.scene.view.position.set(318538.101, 318386.305, 734.8);
         viewer.scene.view.lookAt(new THREE.Vector3(318414.101, 318103.305, 544.8));
-        viewer.toggleSidebar();
+        
 		
 		//viewer.setDescription("");
 		
