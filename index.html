@@ -127,35 +127,40 @@
             geometry: new THREE.BoxGeometry( 12, 5, 8 ),
             position: [318414.101, 318103.305, 546.8],
             scale: 1,
-            rotation: [Math.PI / 2, Math.PI, 0]
+            rotation: [Math.PI / 2, Math.PI, 0],
+            edges: true
             },
             {
             //source: 'test_2.ply',
             geometry: new THREE.BoxGeometry( 12, 5, 8 ),
             position: [318434.101, 318123.305, 541.8],
             scale: 1,
-            rotation: [Math.PI / 2, Math.PI / 2, 0]
+            rotation: [Math.PI / 2, Math.PI / 2, 0],
+            edges: true
             },
             {
             //source: 'test_2.ply',
             geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
             position: [318441.101, 318097.305, 544.8],
             scale: 1,
-            rotation: [Math.PI / 2, Math.PI / 2, 0]
+            rotation: [Math.PI / 2, Math.PI / 2, 0],
+            edges: false
             },
             {
             //source: 'test_2.ply',
             geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
             position: [318450.101, 318094.305, 544.8],
             scale: 1,
-            rotation: [Math.PI / 2, Math.PI / 2, 0]
+            rotation: [Math.PI / 2, Math.PI / 2, 0],
+            edges: false
             },
             {
             //source: 'test_2.ply',
             geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
             position: [318460.101, 318090.305, 543.8],
             scale: 1,
-            rotation: [Math.PI / 2, Math.PI / 2, 0]
+            rotation: [Math.PI / 2, Math.PI / 2, 0],
+            edges: false
             },
         ]
         
@@ -197,14 +202,16 @@
             //m.edges.scale.multiplyScalar(m.scale);
             //m.edges.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
             //m.line = new THREE.LineSegments(m.edges, new THREE.LineBasicMaterial({ color: 0x000000 , linewidth: 1} ) );
-            
-            m.line = new THREE.Line( m.geometry, new THREE.LineBasicMaterial(
+            if (m.eges){
+                m.line = new THREE.Line( m.geometry, new THREE.LineBasicMaterial(
                 { color: 0x000000 } ) );
-            m.line.position.set(m.position[0],m.position[1],m.position[2]);
-            m.line.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2]);
-            //m.line.scale.set( s, s, s );
+                m.line.position.set(m.position[0],m.position[1],m.position[2]);
+                m.line.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2]);
+                //m.line.scale.set( s, s, s );
             
             viewer.scene.scene.add(m.line);
+            }
+            
         }
         
         
