@@ -196,7 +196,7 @@
             //m.edges.position.z = m.position[2];
             //m.edges.scale.multiplyScalar(m.scale);
             //m.edges.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
-            m.line = new THREE.LineSegments(m.edges, new THREE.LineBasicMaterial({ color: 0x000000 } ) );
+            m.line = new THREE.LineSegments(m.edges, new THREE.LineBasicMaterial({ color: 0x000000 , linewidth: 1} ) );
             viewer.scene.scene.add(m.line);
         }
         
