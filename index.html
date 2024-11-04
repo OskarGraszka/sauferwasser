@@ -79,10 +79,17 @@
 			//viewer.fitToScreen();
             
             viewer.scene.annotations.add(new Potree.Annotation({
-				position: [318414.101, 318103.305, 544.8],
+				position: [318414.101, 318103.305, 554.8],
 				//cameraPosition: [633929.708,	490284.576,	6.623],
 				//cameraTarget: [633924.675,	490289.841,	4.600],
-				title: "PLY",
+				title: "budynki",
+				//description: `<p style="text-align:center;"><b>VW T2`
+			}));
+            viewer.scene.annotations.add(new Potree.Annotation({
+				position: [318450.101, 318094.305, 552.8],
+				//cameraPosition: [633929.708,	490284.576,	6.623],
+				//cameraTarget: [633924.675,	490289.841,	4.600],
+				title: "słupki ogrodzeniowe",
 				//description: `<p style="text-align:center;"><b>VW T2`
 			}));
             
@@ -117,22 +124,36 @@
         mesh_dict = [
             {
             //source: 'test.ply',
-            geometry: new THREE.BoxGeometry( 12, 14, 10 ),
+            geometry: new THREE.BoxGeometry( 12, 5, 8 ),
             position: [318414.101, 318103.305, 544.8],
             scale: 1,
             rotation: [Math.PI / 2, Math.PI, 0]
             },
             {
             //source: 'test_2.ply',
-            geometry: new THREE.BoxGeometry( 12, 14, 10 ),
+            geometry: new THREE.BoxGeometry( 12, 5, 8 ),
             position: [318434.101, 318123.305, 541.8],
             scale: 1,
             rotation: [Math.PI / 2, Math.PI / 2, 0]
             },
             {
             //source: 'test_2.ply',
-            geometry: new THREE.CylinderGeometry( 0.2, 0.2, 2, 15 ),
-            position: [318454.101, 318143.305, 541.8],
+            geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
+            position: [318441.101, 318097.305, 542.8],
+            scale: 1,
+            rotation: [Math.PI / 2, Math.PI / 2, 0]
+            },
+            {
+            //source: 'test_2.ply',
+            geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
+            position: [318450.101, 318094.305, 542.8],
+            scale: 1,
+            rotation: [Math.PI / 2, Math.PI / 2, 0]
+            },
+            {
+            //source: 'test_2.ply',
+            geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
+            position: [318460.101, 318090.305, 541.8],
             scale: 1,
             rotation: [Math.PI / 2, Math.PI / 2, 0]
             },
