@@ -186,12 +186,12 @@
             m.mesh.position.set(m.position[0],m.position[1],m.position[2]);
             m.mesh.scale.multiplyScalar(m.scale);
             m.mesh.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
-            viewer.scene.scene.add(m.mesh);
+            //viewer.scene.scene.add(m.mesh);
             
             m.edges = new THREE.EdgesGeometry(m.mesh.geometry);
             m.edges.position.x, m.edges.position.y, m.edges.position.z, = m.position[0],m.position[1],m.position[2];
-            //m.edges.scale.multiplyScalar(m.scale);
-            //m.edges.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
+            m.edges.scale.multiplyScalar(m.scale);
+            m.edges.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
             m.line = new THREE.LineSegments(m.edges, new THREE.LineBasicMaterial({ color: 0x000000 } ) );
             viewer.scene.scene.add(m.line);
         }
