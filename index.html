@@ -55,6 +55,8 @@
 		viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
 		viewer.setDescription('SAUFERWASSER');
 		viewer.loadSettingsFromURL();
+        viewer.scene.view.position.set(318338.101, 318086.305, 734.8);
+        viewer.scene.view.lookAt(new THREE.Vector3(318538.101, 318286.305, 534.8));
 		
 		//viewer.setDescription("");
 		
@@ -74,8 +76,6 @@
 			material.size = 1;
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 			material.shape = Potree.PointShape.SQUARE;
-            scene.view.position.set(318338.101, 318086.305, 734.8);
-			scene.view.lookAt(new THREE.Vector3(318538.101, 318286.305, 534.8));
 			//viewer.fitToScreen();
             
             viewer.scene.annotations.add(new Potree.Annotation({
