@@ -162,6 +162,7 @@
         
         var loader = new THREE.PLYLoader();
         
+        /*
         var b_material = new THREE.MeshPhysicalMaterial( {//THREE.MeshBasicMaterial( {//THREE.MeshPhysicalMaterial( {//new THREE.MeshLambertMaterial
             color: 0xFFFFFF,//0xbf7e49,//0xFFFFFF,//0x000000,//0xffff00,//0xFFFFFF,
             metalness: 0.5,
@@ -175,7 +176,17 @@
             //vertexColors: true
             //wireframe: true
         } );
+        */
         
+        var b_material = new THREE.MeshPhysicalMaterial( {
+            color: 0x226666,
+            metalness: 0,
+            roughness: 0.5,
+            clearCoat:  1.0,
+            clearCoatRoughness: 1.0,
+            reflectivity: 1.0
+        } );
+            
         for (var i = 0; i < mesh_dict.length; i++){
             m = mesh_dict[i]
             m.mesh = new THREE.Mesh( m.geometry, b_material );
