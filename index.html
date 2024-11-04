@@ -50,10 +50,10 @@
 		viewer.setFOV(60);
 		viewer.setPointBudget(3_000_000);
         viewer.setMinNodeSize(50);
-		document.title = "RIESE";
+		document.title = "SAUFERWASSER";
 		viewer.setEDLEnabled(false);
 		viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
-		viewer.setDescription('RIESE');
+		viewer.setDescription('SAUFERWASSER');
 		viewer.loadSettingsFromURL();
 		
 		//viewer.setDescription("");
@@ -112,8 +112,19 @@
 			viewer.scene.scene.add(ambient);
 		}
         
+        mesh_dict = [
+            {
+            source: 'test.ply',
+            position: [318538.101, 318286.305, 534.8],
+            scale: 2,
+            rotation: [Math.PI / 2, Math.PI, 0]},
+        ]
+        
         var loader = new THREE.PLYLoader();
-		loader.load( "models/test.ply", (geometry) => {
+        
+        //for m in mesh_dict:
+        m = mesh_dict[0]
+        loader.load( "models/" + m.source, (geometry) => {
 			geometry.computeVertexNormals();
             
             let mesh1;
