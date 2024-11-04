@@ -182,13 +182,15 @@
         for (var i = 0; i < mesh_dict.length; i++){
             m = mesh_dict[i]
             
-
-            
             m.mesh = new THREE.Mesh( m.geometry, b_material );
             m.mesh.position.set(m.position[0],m.position[1],m.position[2]);
             m.mesh.scale.multiplyScalar(m.scale);
             m.mesh.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
             viewer.scene.scene.add(m.mesh);
+            
+            edges = new THREE.EdgesGeometry(m.mesh); 
+            line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) ); 
+            viewer.scene.scene.add( line );
         }
         
         
