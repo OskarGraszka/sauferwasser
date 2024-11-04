@@ -131,7 +131,7 @@
         
         var loader = new THREE.PLYLoader();
         
-        for (var i = 0; i < mesh_dict.length; i++){
+        for (var i = 0; i < mesh_dict.length-1; i++){
             m = mesh_dict[i]
             loader.load( "models/" + m.source, (geometry) => {
                 geometry.computeVertexNormals();
