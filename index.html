@@ -123,7 +123,7 @@
             },
             {
             source: 'test.ply',
-            position: [318434.101, 318123.305, 540.8],
+            position: [318434.101, 318123.305, 541.8],
             scale: 2,
             rotation: [Math.PI / 2, Math.PI / 2, 0]
             },
@@ -136,7 +136,7 @@
             loader.load( "models/" + m.source, (geometry) => {
                 geometry.computeVertexNormals();
             
-                var mesh1;
+                //var mesh1;
                 {
                     var b_material = new THREE.MeshPhysicalMaterial( {
                         color: 0xFFFFFF,//0x000000,//0xffff00,//0xFFFFFF,
@@ -151,11 +151,11 @@
                         //wireframe: true
                     } );
 				
-				    mesh1 = new THREE.Mesh( geometry, b_material );
-				    mesh1.position.set(m.position[0],m.position[1],m.position[2]);
-				    mesh1.scale.multiplyScalar(m.scale);
-				    mesh1.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
-				    viewer.scene.scene.add(mesh1);
+				    m.mesh = new THREE.Mesh( geometry, b_material );
+				    m.mesh.position.set(m.position[0],m.position[1],m.position[2]);
+				    m.mesh.scale.multiplyScalar(m.scale);
+				    m.mesh.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
+				    viewer.scene.scene.add(m.mesh);
 			     }
                 /*
                 let mesh2;
