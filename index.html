@@ -281,12 +281,12 @@
             //m.line = new THREE.LineSegments(m.edges, new THREE.LineBasicMaterial({ color: 0x000000 , linewidth: 1} ) );
             if (m.edges == true){
                 m.line = new THREE.Line( m.geometry, new THREE.LineBasicMaterial(
-                { color: 0x000000, opacity:0.1, transparent: true }));
+                { color: 0x000000, opacity:0.2, transparent: true }));
                 m.line.position.set(m.position[0],m.position[1],m.position[2]+building_height/2);
                 m.line.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2]);
                 //m.line.scale.set( s, s, s );
             
-                //viewer.scene.scene.add(m.line);
+                viewer.scene.scene.add(m.line);
             }
             
         }
