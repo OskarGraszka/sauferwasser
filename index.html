@@ -109,21 +109,16 @@
 		});
         
         { // LIGHTS
-			const directional = new THREE.DirectionalLight( 0xffffff, 0.8);
-			directional.position.set(318414.101, 318103.305, 544.8);
-			//directional.lookAt(0, 0, 0);
-            directional.lookAt(318338.101, 318086.305, 734.8);
-            
-            const directional2 = new THREE.DirectionalLight( 0xffffff, 1.0);
-			directional2.position.set(5616031.038, 6387075.34, 1577.45);
-			//directional.lookAt(0, 0, 0);
-            directional2.lookAt(5616131.038, 6388075.34, 577.45);
+
+            const directional = new THREE.DirectionalLight( 0xffffff, 1.0);
+			directional.position.set(5616031.038, 6387075.34, 1577.45);
+            directional.lookAt(5616131.038, 6388075.34, 577.45);
             
 			//const ambient = new THREE.AmbientLight(0x555555);
             const ambient = new THREE.AmbientLight(0xffffff);
 
-			//viewer.scene.scene.add(directional);
-            //viewer.scene.scene.add(directional2);
+
+            viewer.scene.scene.add(directional);
 			viewer.scene.scene.add(ambient);
 		}
         var building_height = 5
