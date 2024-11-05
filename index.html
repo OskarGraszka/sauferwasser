@@ -73,7 +73,7 @@
 			let pointcloud = e.pointcloud;
 			let material = pointcloud.material;
 			viewer.scene.addPointCloud(pointcloud);
-			//material.activeAttributeName = "rgba"; //[rgba, intensity, classification, ...]
+			material.activeAttributeName = "rgba"; //[rgba, intensity, classification, ...]
 			material.size = 1;
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 			material.shape = Potree.PointShape.SQUARE;
