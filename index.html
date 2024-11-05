@@ -123,7 +123,7 @@
             const ambient = new THREE.AmbientLight(0xffffff);
 
 			//viewer.scene.scene.add(directional);
-            viewer.scene.scene.add(directional2);
+            //viewer.scene.scene.add(directional2);
 			viewer.scene.scene.add(ambient);
 		}
         var building_height = 5
@@ -208,7 +208,7 @@
             },
             {
             geometry: new THREE.BoxGeometry( 2.56, 2.99, building_height ),
-            position: [5616085.22927053, 6388035.06190603, 574.48],
+            position: [5616068.22927053, 6388035.06190603, 574.48],
             scale: 1,
             rotation: [0, 0, -5.81],
             edges: true
@@ -251,13 +251,13 @@
         
         var b_material = new THREE.MeshPhysicalMaterial( {//THREE.MeshBasicMaterial( {//THREE.MeshPhysicalMaterial( {//new THREE.MeshLambertMaterial
             color: 0xa1a1a1,//0xbf7e49,//0xFFFFFF,//0x000000,//0xffff00,//0xFFFFFF,
-            metalness: 0,
+            metalness: 1,
             roughness: 0.5,
             //clearCoat:  0.15,
             //clearCoatRoughness: 0.37,
             reflectivity: 1.0,
             transparent:true,
-            opacity: 0.8,
+            opacity: 1.0,
             fog: true,
             //vertexColors: true
             //wireframe: true
@@ -287,11 +287,11 @@
             if (m.edges == true){
                 m.line = new THREE.Line( m.geometry, new THREE.LineBasicMaterial(
                 { color: 0x000000, opacity:0.1, transparent: true }));
-                m.line.position.set(m.position[0],m.position[1],m.position[2]);
+                m.line.position.set(m.position[0],m.position[1],m.position[2]+building_height/2);
                 m.line.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2]);
                 //m.line.scale.set( s, s, s );
             
-                viewer.scene.scene.add(m.line);
+                //viewer.scene.scene.add(m.line);
             }
             
         }
