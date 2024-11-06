@@ -33,6 +33,8 @@
     <script src="./libs/Cesium/Cesium.js"></script>
 	<script src="./libs/other/OBJLoader.js"></script>
 	<script src="./libs/other/PLYLoader.js"></script>
+    
+    <script src="./data/poles.js"></script>
 	<!--<script src="./libs/other/MTLLoader.js"></script> -->
 	
 	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
@@ -221,24 +223,8 @@
             scale: 1,
             rotation: [0, 0, -4.22],
             edges: true
-            },
+            }
             
-            
-            
-            //
-            
-            //
-            
-            
-            {
-
-            //source: 'test_2.ply',
-            geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
-            position: [318460.101, 318090.305, 543.8],
-            scale: 1,
-            rotation: [Math.PI / 2, Math.PI / 2, 0],
-            edges: false
-            },
         ]
         
         var loader = new THREE.PLYLoader();
@@ -288,6 +274,31 @@
             
                 viewer.scene.scene.add(m.line);
             }
+            
+        }
+        
+        for (var i = 0; i < poles.features.length; i++){
+            p = poles.features[i]
+            var geometry = new THREE.CylinderGeometry( 0.15, 0.15, 3, 15 )
+            
+            var mesh = new THREE.Mesh( m.geometry, b_material );
+            mesh.position.set(p.geometry.coordinates[0],p.geometry.coordinates[1],p.properties.SMAPLE1 + 1.4);
+            
+            //m.mesh.scale.multiplyScalar(m.scale);
+            m.mesh.rotation.set(Math.PI / 2, Math.PI / 2, 0)
+            mesh.receiveShadow = true;
+            viewer.scene.scene.add(mesh);
+            /*
+            {
+
+            //source: 'test_2.ply',
+            geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
+            position: [318460.101, 318090.305, 543.8],
+            scale: 1,
+            rotation: [Math.PI / 2, Math.PI / 2, 0],
+            edges: false
+            },
+            }*/
             
         }
         
