@@ -80,7 +80,9 @@
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 			material.shape = Potree.PointShape.SQUARE;
 			viewer.fitToScreen();
+            e.pointcloud.projection = proj4.defs("EPSG:2180","+proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
             console.log (e.pointcloud.projection);
+            
             viewer.scene.annotations.add(new Potree.Annotation({
 				position: [318414.101, 318103.305, 577.8],
 				//cameraPosition: [633929.708,	490284.576,	6.623],
