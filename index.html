@@ -74,7 +74,7 @@
 		
 		Potree.loadPointCloud("pointclouds/chmura_2177_n/cloud.js", "index", e => {
 			let pointcloud = e.pointcloud;
-            pointcloud.projection = proj4.defs("+proj=tmerc +lat_0=0 +lon_0=18 +k=0.999923 +x_0=6500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
+            pointcloud.projection = proj4.defs("EPSG:2177","+proj=tmerc +lat_0=0 +lon_0=18 +k=0.999923 +x_0=6500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
 
             
 			let material = pointcloud.material;
@@ -87,7 +87,7 @@
 			viewer.fitToScreen();
             
             
-
+            console.log (pointcloud);
             console.log (pointcloud.projection);
             //let pointcloudProjection = e.pointcloud.projection;
             //let pointcloudProjection = proj4.defs("EPSG:2177","+proj=tmerc +lat_0=0 +lon_0=18 +k=0.999923 +x_0=6500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
