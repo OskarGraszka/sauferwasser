@@ -80,7 +80,7 @@
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 			material.shape = Potree.PointShape.SQUARE;
 			viewer.fitToScreen();
-            
+            console.log (e.pointcloud.projection);
             viewer.scene.annotations.add(new Potree.Annotation({
 				position: [318414.101, 318103.305, 577.8],
 				//cameraPosition: [633929.708,	490284.576,	6.623],
