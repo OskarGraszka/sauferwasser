@@ -73,7 +73,8 @@
 		
 		Potree.loadPointCloud("pointclouds/chmura_2177/cloud.js", "index", e => {
 			let pointcloud = e.pointcloud;
-            //pointcloud.projection = proj4.defs("EPSG:2176","+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999923 +x_0=5500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
+            pointcloud.projection = proj4.defs(proj4.defs("EPSG:2177","+proj=tmerc +lat_0=0 +lon_0=18 +k=0.999923 +x_0=6500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
+);
 			let material = pointcloud.material;
 			viewer.scene.addPointCloud(pointcloud);
 			material.activeAttributeName = "rgba"; //[rgba, intensity, classification, ...]
@@ -136,7 +137,8 @@
             position: [5616131.038, 6388075.34, 577.45],
             scale: 1,
             rotation: [0, 0, 4.22],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 3.52, 8.64, building_height ),
@@ -250,7 +252,7 @@
         } );
 
         
-
+// UWAGA Wszystkie obiekty typu MESH importowane są z zamienioną kolejnością współrzędnych. Dlatego dalej x i y wprowadzane są w odwrotnej kolejności.
             
         for (var i = 0; i < mesh_dict.length; i++){
             m = mesh_dict[i]
@@ -284,7 +286,6 @@
         
         for (var j = 0; j < poles.features.length; j++){
             p = poles.features[j]
-            //p.mesh_geometry = new THREE.CylinderGeometry( 0.15, 0.15, 3, 15 )
             
             p.mesh = new THREE.Mesh( new THREE.CylinderGeometry( 0.15, 0.15, 3, 15 ), b_material );
            p.mesh.position.set(p.geometry.coordinates[1],p.geometry.coordinates[0],p.properties.SAMPLE1 + 1.4);
@@ -293,17 +294,6 @@
             p.mesh.rotation.set(Math.PI / 2, Math.PI / 2, 0)
             p.mesh.receiveShadow = true;
             viewer.scene.scene.add(p.mesh);
-            /*
-            {
-
-            //source: 'test_2.ply',
-            geometry: new THREE.CylinderGeometry( 0.15, 0.15, 2.5, 15 ),
-            position: [318460.101, 318090.305, 543.8],
-            scale: 1,
-            rotation: [Math.PI / 2, Math.PI / 2, 0],
-            edges: false
-            },
-            }*/
             
         }
         
