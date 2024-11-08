@@ -47,11 +47,11 @@
 	<script>
 	
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
-		viewer.toggleSidebar();
+		//viewer.toggleSidebar();
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
-		viewer.setPointBudget(3_000_000);
-        viewer.setMinNodeSize(50);
+		viewer.setPointBudget(10_000_000);
+        //viewer.setMinNodeSize(50);
 		document.title = "SAUFERWASSER";
 		viewer.setEDLEnabled(false);
 		viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
@@ -65,10 +65,10 @@
 		
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');
-			$("#menu_appearance").next().show();
+			//$("#menu_appearance").next().show();
 			$("#menu_tools").next().show();
-			$("#menu_clipping").next().show();
-			viewer.toggleSidebar();
+			//$("#menu_clipping").next().show();
+			//viewer.toggleSidebar();
 		});
 		
 		Potree.loadPointCloud("pointclouds/chmura_przekonwertowana/cloud.js", "index", e => {
