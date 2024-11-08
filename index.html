@@ -87,33 +87,6 @@
 
             console.log (pointcloud.projection);
             
-            viewer.scene.annotations.add(new Potree.Annotation({
-				position: [318414.101, 318103.305, 577.8],
-				//cameraPosition: [633929.708,	490284.576,	6.623],
-				//cameraTarget: [633924.675,	490289.841,	4.600],
-				title: "budynki",
-				//description: `<p style="text-align:center;"><b>VW T2`
-			}));
-            viewer.scene.annotations.add(new Potree.Annotation({
-				position: [318450.101, 318094.305, 547.8],
-				//cameraPosition: [633929.708,	490284.576,	6.623],
-				//cameraTarget: [633924.675,	490289.841,	4.600],
-				title: "słupki ogrodzeniowe",
-				//description: `<p style="text-align:center;"><b>VW T2`
-			}));
-            
-            //Potree.measureTimings = true;
-            /*let pointcloudProjection = proj4.defs("EPSG:2180","+proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");//e.pointcloud.projection;
-            let mapProjection = proj4.defs("WGS84");
-            
-            window.toMap = proj4(pointcloudProjection, mapProjection);
-            window.toScene = proj4(mapProjection, pointcloudProjection);
-            
-            {
-                let bb = viewer.getBoundingBox();
-                let minWGS84 = proj4(pointcloudProjection, mapProjection, bb.min.toArray());
-                let maxWGS84 = proj4(pointcloudProjection, mapProjection, bb.max.toArray());
-            }*/
 		});
         
         { // LIGHTS
@@ -145,91 +118,104 @@
             position: [5616144.34, 6388049.91, 575.07],
             scale: 1,
             rotation: [0, 0, 4.24],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 1.54, 1.99, building_height ),
             position: [5616139.81, 6388047.55, 575.07],
             scale: 1,
             rotation: [0, 0, 5.81],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 8.83, 9.81, building_height ),
             position: [5616122.13341097, 6388093.5809004, 578.74],
             scale: 1,
             rotation: [0, 0, 5.81],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 7.23, 7.43, building_height ),
             position: [5616087.6983599, 6388105.95579886, 580.00],
             scale: 1,
             rotation: [0, 0, 4.22],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 9.84, 21.49, building_height ),
             position: [5616095.02768834, 6388083.54273901, 578.42],
             scale: 1,
             rotation: [0, 0, 5.83],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 8.25, 21.58, building_height ),
             position: [5616078.25568096, 6388075.93418196, 577.37],
             scale: 1,
             rotation: [0, 0, 5.83],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 11.21, 21.233, building_height ),
             position: [5616062.98705889, 6388068.51326299, 575.40],
             scale: 1,
             rotation: [0, 0, 5.82],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 8.19, 12.07, building_height ),
             position: [5616103.58371507, 6388053.46145765, 576.35],
             scale: 1,
             rotation: [0, 0, 5.81],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 1.87, 2.85, building_height ),
             position: [5616074.47934144, 6388049.28273947, 575.00],
             scale: 1,
             rotation: [0, 0, 4.24],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 8.58, 17.04, building_height ),
             position: [5616076.92365758, 6388038.68372762, 574.48],
             scale: 1,
             rotation: [0, 0, 5.81],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 2.56, 2.99, building_height ),
             position: [5616085.07927053, 6388035.06190603, 574.48],
             scale: 1,
             rotation: [0, 0, 5.81],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 11.05, 13.14, building_height ),
             position: [5616118.05974151, 6388032.97791668, 574.29],
             scale: 1,
             rotation: [0, 0, 4.25],
-            edges: true
+            edges: true,
+            annotation: '1'
             },
             {
             geometry: new THREE.BoxGeometry( 8.48, 14.63, building_height ),
             position: [5616093.01594359, 6388021.68235688, 573.12],
             scale: 1,
             rotation: [0, 0, 4.22],
-            edges: true
+            edges: true,
+            annotation: '1'
             }
             
         ]
@@ -272,6 +258,16 @@
             //m.edges.scale.multiplyScalar(m.scale);
             //m.edges.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
             //m.line = new THREE.LineSegments(m.edges, new THREE.LineBasicMaterial({ color: 0x000000 , linewidth: 1} ) );
+            
+            if (m.annotation != ''){
+                viewer.scene.annotations.add(new Potree.Annotation({
+				position: [m.position[1], m.position[0], m.position[2] + 10],
+				//cameraPosition: [633929.708,	490284.576,	6.623],
+				//cameraTarget: [633924.675,	490289.841,	4.600],
+				title: m.annotation
+				//description: `<p style="text-align:center;"><b>VW T2`
+            }
+            
             if (m.edges == true){
                 m.line = new THREE.Line( m.geometry, new THREE.LineBasicMaterial(
                 { color: 0x000000, opacity:0.2, transparent: true }));
