@@ -258,7 +258,7 @@
             m.mesh = new THREE.Mesh( m.geometry, b_material );
             m.mesh.position.set(m.position[1],m.position[0],m.position[2]+building_height/2);
             //m.mesh.scale.multiplyScalar(m.scale);
-            m.mesh.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2])
+            m.mesh.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2] + Math.PI / 2)
             m.mesh.receiveShadow = true;
             viewer.scene.scene.add(m.mesh);
             
@@ -274,7 +274,7 @@
                 m.line = new THREE.Line( m.geometry, new THREE.LineBasicMaterial(
                 { color: 0x000000, opacity:0.2, transparent: true }));
                 m.line.position.set(m.position[1],m.position[0],m.position[2]+building_height/2);
-                m.line.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2]);
+                m.line.rotation.set(m.rotation[0],m.rotation[1],m.rotation[2] + Math.PI / 2);
                 //m.line.scale.set( s, s, s );
             
                 viewer.scene.scene.add(m.line);
@@ -287,7 +287,7 @@
             //p.mesh_geometry = new THREE.CylinderGeometry( 0.15, 0.15, 3, 15 )
             
             p.mesh = new THREE.Mesh( new THREE.CylinderGeometry( 0.15, 0.15, 3, 15 ), b_material );
-           p.mesh.position.set(p.geometry.coordinates[1],p.geometry.coordinates[2],p.properties.SAMPLE1 + 1.4);
+           p.mesh.position.set(p.geometry.coordinates[1],p.geometry.coordinates[0],p.properties.SAMPLE1 + 1.4);
             
             //m.mesh.scale.multiplyScalar(m.scale);
             p.mesh.rotation.set(Math.PI / 2, Math.PI / 2, 0)
