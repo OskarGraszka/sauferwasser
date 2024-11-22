@@ -33,6 +33,7 @@
     <script src="./libs/Cesium/Cesium.js"></script>
 	<script src="./libs/other/OBJLoader.js"></script>
 	<script src="./libs/other/PLYLoader.js"></script>
+    <script src="./libs/lightbox2-master/dist/js/lightbox.min.js"></script>
     
     <script src="./data/poles_2.js"></script>
 	<!--<script src="./libs/other/MTLLoader.js"></script> -->
@@ -245,7 +246,7 @@
 				//cameraPosition: [633929.708,	490284.576,	6.623],
 				//cameraTarget: [633924.675,	490289.841,	4.600],
 				title: '<p style="font-size: 12px;">Zdjęcie lotnicze<\p>',
-				description: '<img src="media/Sauferwasser45.tif" alt="Zdjęcie z 1945 r." style="width:400px;">'
+				description: '<a href="media/Sauferwasser45.tif" rel="lightbox[t1]" data-title="Zdjęcie z 1945 r."><img src="media/Sauferwasser45.tif" style="display:block;height:100px;width:auto;"></a>'//'<img src="media/Sauferwasser45.tif" alt="Zdjęcie z 1945 r." style="width:400px;">'
                 }));
         
         var loader = new THREE.PLYLoader();
